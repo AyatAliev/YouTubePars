@@ -1,15 +1,12 @@
 package com.example.geektechyoutubeparcer.ui.playlist
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.geektechyoutubeparcer.R
-import com.example.geektechyoutubeparcer.model.Notes
 import com.example.geektechyoutubeparcer.model.NotesItem
 import com.example.geektechyoutubeparcer.ui.description.DescriptionActivity
 import com.example.geektechyoutubeparcer.ui.playlist.RecyclerView.Listener
@@ -20,14 +17,14 @@ class NotesActivity : AppCompatActivity(), Listener {
 
     private var notesItems = mutableListOf<NotesItem>()
     private var adapter: Adapter? = null
-    private var viewModel: PlaylistViewModel? = null
+    private var viewModel: NotestViewModel? = null
     private var position: Int? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notes)
         setRecyclerview()
         btn_click()
-        viewModel = ViewModelProviders.of(this).get(PlaylistViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(NotestViewModel::class.java)
         setupToSubscribe()
     }
     
