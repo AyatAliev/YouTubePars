@@ -1,6 +1,5 @@
-package com.example.geektechyoutubeparcer.ui.playlist.RecyclerView
+package com.example.geektechyoutubeparcer.ui.notes.RecyclerView
 
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.geektechyoutubeparcer.R

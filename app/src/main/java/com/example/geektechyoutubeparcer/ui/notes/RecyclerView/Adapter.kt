@@ -1,14 +1,12 @@
-package com.example.geektechyoutubeparcer.ui.playlist.Recyclerview
+package com.example.geektechyoutubeparcer.ui.notes.Recyclerview
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.geektechyoutubeparcer.R
 import com.example.geektechyoutubeparcer.model.NotesItem
-import com.example.geektechyoutubeparcer.ui.playlist.NotesActivity
-import com.example.geektechyoutubeparcer.ui.playlist.RecyclerView.Listener
-import com.example.geektechyoutubeparcer.ui.playlist.RecyclerView.ViewHolder
+import com.example.geektechyoutubeparcer.ui.notes.RecyclerView.Listener
+import com.example.geektechyoutubeparcer.ui.notes.RecyclerView.ViewHolder
 
 
 class Adapter(

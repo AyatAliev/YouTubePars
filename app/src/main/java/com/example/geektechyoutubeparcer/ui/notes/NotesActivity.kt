@@ -1,4 +1,4 @@
-package com.example.geektechyoutubeparcer.ui.playlist
+package com.example.geektechyoutubeparcer.ui.notes
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.geektechyoutubeparcer.R
 import com.example.geektechyoutubeparcer.model.NotesItem
 import com.example.geektechyoutubeparcer.ui.description.DescriptionActivity
-import com.example.geektechyoutubeparcer.ui.playlist.RecyclerView.Listener
-import com.example.geektechyoutubeparcer.ui.playlist.Recyclerview.Adapter
+import com.example.geektechyoutubeparcer.ui.notes.RecyclerView.Listener
+import com.example.geektechyoutubeparcer.ui.notes.Recyclerview.Adapter
 import kotlinx.android.synthetic.main.activity_notes.*
 
 class NotesActivity : AppCompatActivity(), Listener {
@@ -45,7 +45,7 @@ class NotesActivity : AppCompatActivity(), Listener {
 
     private fun btn_click() {
         btn_frame_36.setOnClickListener {
-            startActivityForResult(Intent(this, DescriptionActivity::class.java),100)
+            startActivityForResult(Intent(this, DescriptionActivity::class.java),101)
         }
     }
 
@@ -60,6 +60,8 @@ class NotesActivity : AppCompatActivity(), Listener {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 100 && resultCode == RESULT_OK) {
             position?.let { adapter?.addItem(it, data?.getSerializableExtra("change") as? NotesItem) }
+       }else{
+            adapter?.addItem(data?.getSerializableExtra("change") as NotesItem?)
         }
     }
 }

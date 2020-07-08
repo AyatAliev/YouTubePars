@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.description.DescriptionActivity"></activity>
-        <activity android:name=".ui.playlist.NotesActivity">
+        <activity android:name=".ui.notes.NotesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
