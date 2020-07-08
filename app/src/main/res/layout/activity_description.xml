@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.description.DescriptionActivity">
+
+    <ImageView
+        android:id="@+id/ic_icon_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_back_icon"
+        />
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Заметки"
+        android:textAllCaps="false"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_marginTop="35dp"
+        />
+    
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="343dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="90dp"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="16dp"
+        android:textStyle="bold"
+        android:hint="Заголовок"
+        android:background="@drawable/bg_edittext"
+        />
+
+    <EditText
+        android:id="@+id/et_body"
+        android:layout_width="343dp"
+        android:layout_below="@id/et_title"
+        android:layout_height="231dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:gravity="start"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_edittext"
+        />
+
+    <Spinner
+        android:id="@+id/nice_spinner"
+        android:layout_width="343dp"
+        android:layout_height="56dp"
+        android:layout_below="@id/et_body"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/bg_nice_spinner"
+
+        />
+
+    <Button
+        android:id="@+id/principal_c"
+        android:layout_width="343dp"
+        android:layout_height="56dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:text="Сохранить"
+        android:textColor="#fff"
+        android:textAllCaps="false"
+        android:background="@drawable/principal_c"
+        android:elevation="2.21dp"
+        />
+
+
+</RelativeLayout>

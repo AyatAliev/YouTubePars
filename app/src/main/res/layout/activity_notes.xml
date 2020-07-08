@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".ui.playlist.NotesActivity">
+
+    <TextView
+        android:id="@+id/sp_h4_monts"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="84dp"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/sp_h4_monts"
+        android:textAppearance="@style/sp_h4_monts" />
+
+    <TextView
+        android:id="@+id/body_1_mont"
+        android:layout_width="49dp"
+        android:layout_height="26dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="243dp"
+        android:layout_marginTop="96dp"
+        android:gravity="right|center_vertical"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/body_1_mont"
+        android:textAppearance="@style/body_1_mont" />
+
+
+    <Button
+        android:id="@+id/btn_frame_36"
+        android:layout_width="116dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/frame_36"
+        android:text="Добавить заметку +"
+        android:textColor="#ffffff"
+        android:textSize="9sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:layout_width="67dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="93dp"
+        android:layout_marginRight="16dp" />
+    <!--    android:background="#DD1A1A" -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/sp_h4_monts"
+        tools:listitem="@layout/item_notes" />
+
+
+</RelativeLayout>

@@ -9,10 +9,10 @@ class RetrofitClient() {
 
     companion object {
 
-        private const val BASE_URL = "http://127.0.0.1:8000/"
+        private const val BASE_URL = "http://176.99.11.169:8000"
 
 
-        fun create(): YoutubeAPi? {
+        fun create(): NotesApi? {
             val okHttpClient = OkHttpClient().newBuilder()
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .readTimeout(30, TimeUnit.SECONDS)
@@ -25,7 +25,7 @@ class RetrofitClient() {
                 .client(okHttpClient)
                 .build()
 
-            return retrofit.create(YoutubeAPi::class.java)
+            return retrofit.create(NotesApi::class.java)
 
         }
 

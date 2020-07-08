@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">GeekTechYoutubeParcer</string>
+    <!-- strings.xml -->
+    <string name="sp_h4_monts">
+Заметки
+</string>
+    <string name="body_1_mont">
+
+Show:
+</string>
 </resources>
