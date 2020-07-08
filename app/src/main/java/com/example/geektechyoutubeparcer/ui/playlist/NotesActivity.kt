@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.geektechyoutubeparcer.R
+import com.example.geektechyoutubeparcer.model.Notes
 import com.example.geektechyoutubeparcer.model.NotesItem
 import com.example.geektechyoutubeparcer.ui.description.DescriptionActivity
 import com.example.geektechyoutubeparcer.ui.playlist.RecyclerView.Listener
@@ -28,14 +29,6 @@ class NotesActivity : AppCompatActivity(), Listener {
         btn_click()
         viewModel = ViewModelProviders.of(this).get(PlaylistViewModel::class.java)
         setupToSubscribe()
-        getData()
-    }
-
-    private fun getData(){
-        if (intent.getSerializableExtra("change") != null) {
-            notesItems.add((intent.getSerializableExtra("change") as NotesItem))
-            adapter?.notifyDataSetChanged()
-        }
     }
     
     private fun setupToSubscribe() {
@@ -55,7 +48,7 @@ class NotesActivity : AppCompatActivity(), Listener {
 
     private fun btn_click() {
         btn_frame_36.setOnClickListener {
-            startActivity(Intent(this, DescriptionActivity::class.java))
+            startActivityForResult(Intent(this, DescriptionActivity::class.java),100)
         }
     }
 
@@ -69,7 +62,7 @@ class NotesActivity : AppCompatActivity(), Listener {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 100 && resultCode == RESULT_OK) {
-            position?.let { adapter?.addItem(it, data?.getSerializableExtra("change") as NotesItem) }
+            position?.let { adapter?.addItem(it, data?.getSerializableExtra("change") as? NotesItem) }
         }
     }
 }

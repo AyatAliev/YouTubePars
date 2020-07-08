@@ -21,7 +21,12 @@ class Adapter(
         notifyDataSetChanged()
     }
 
-    fun addItem(pos : Int,data: NotesItem?) {
+    fun addItem(data: NotesItem?) {
+        data?.let { list.add(it) }
+        notifyDataSetChanged()
+    }
+
+    fun addItem(pos: Int, data: NotesItem?) {
         list.removeAt(pos)
         data?.let { list.add(pos, it) }
         notifyDataSetChanged()
