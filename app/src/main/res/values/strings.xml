@@ -8,4 +8,6 @@
 
 Show:
 </string>
+    <string name="popur_delete">Удалить</string>
+    <string name="popur_share">Отправить</string>
 </resources>

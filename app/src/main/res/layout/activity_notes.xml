@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
     tools:context=".ui.notes.NotesActivity">
 
     <TextView
@@ -54,7 +53,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="93dp"
         android:layout_marginRight="16dp" />
-    <!--    android:background="#DD1A1A" -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

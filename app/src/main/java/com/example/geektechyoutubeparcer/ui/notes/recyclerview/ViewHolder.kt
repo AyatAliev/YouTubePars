@@ -1,6 +1,7 @@
-package com.example.geektechyoutubeparcer.ui.notes.RecyclerView
+package com.example.geektechyoutubeparcer.ui.notes.recyclerview
 
 import android.view.View
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import com.example.geektechyoutubeparcer.R
 import com.example.geektechyoutubeparcer.model.NotesItem
@@ -20,20 +21,18 @@ open class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     private fun setBackground(notesItem: NotesItem){
         when (notesItem.color) {
-            0 -> {
-                itemView.item_relative_layout.setBackgroundResource(R.drawable.bg_tv)
-            }
-            1 -> {
-                itemView.item_relative_layout.setBackgroundResource(R.drawable.bg_tv1)
-            }
-            2 -> {
-                itemView.item_relative_layout.setBackgroundResource(R.drawable.bg_tv2)
-            }
-            3 -> {
-                itemView.item_relative_layout.setBackgroundResource(R.drawable.bg_tv3)
-            }
+            0 -> changeBackground(R.drawable.bg_tv)
+            1 -> changeBackground(R.drawable.bg_tv1)
+            2 -> changeBackground(R.drawable.bg_tv2)
+            3 -> changeBackground(R.drawable.bg_tv3)
+
         }
     }
+
+    private fun changeBackground(drawble: Int) {
+        itemView.item_relative_layout.setBackgroundResource(drawble)
+    }
+
 }
 interface Listener {
     fun onItemClick(position : Int,noteItem: NotesItem)

@@ -3,15 +3,20 @@ package com.example.geektechyoutubeparcer.ui.notes
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.geektechyoutubeparcer.R
 import com.example.geektechyoutubeparcer.model.NotesItem
 import com.example.geektechyoutubeparcer.ui.description.DescriptionActivity
-import com.example.geektechyoutubeparcer.ui.notes.RecyclerView.Listener
+import com.example.geektechyoutubeparcer.ui.description.DescriptionViewModel
+import com.example.geektechyoutubeparcer.ui.notes.recyclerview.Listener
 import com.example.geektechyoutubeparcer.ui.notes.Recyclerview.Adapter
 import kotlinx.android.synthetic.main.activity_notes.*
+import kotlinx.android.synthetic.main.item_notes.*
+import kotlinx.android.synthetic.main.item_notes.view.*
 
 class NotesActivity : AppCompatActivity(), Listener {
 
@@ -27,7 +32,7 @@ class NotesActivity : AppCompatActivity(), Listener {
         viewModel = ViewModelProviders.of(this).get(NotestViewModel::class.java)
         setupToSubscribe()
     }
-    
+
     private fun setupToSubscribe() {
         viewModel?.fetchPlaylist()?.observe(this, Observer {
             if (it != null) {
@@ -51,6 +56,7 @@ class NotesActivity : AppCompatActivity(), Listener {
 
     override fun onItemClick(position: Int, notesItem: NotesItem) {
         this.position = position
+        DescriptionActivity.getData(position)
         startActivityForResult(Intent(this, DescriptionActivity::class.java).apply {
             putExtra("notesItem", notesItem)
         }, 100)
@@ -58,10 +64,12 @@ class NotesActivity : AppCompatActivity(), Listener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 100 && resultCode == RESULT_OK) {
-            position?.let { adapter?.addItem(it, data?.getSerializableExtra("change") as? NotesItem) }
-       }else{
-            adapter?.addItem(data?.getSerializableExtra("change") as NotesItem?)
+        if (resultCode == RESULT_OK) {
+            val dto = data?.getSerializableExtra("change") as? NotesItem
+            when (requestCode) {
+               100 -> position?.let { adapter?.addItem(it, data?.getSerializableExtra("change") as? NotesItem) }
+                101 -> adapter?.addItem(dto)
+            }
         }
     }
 }
